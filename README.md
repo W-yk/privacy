@@ -1,23 +1,12 @@
-# TensorFlow Privacy
+# Intro
 
-This repository contains the source code for TensorFlow Privacy, a Python
-library that includes implementations of TensorFlow optimizers for training
-machine learning models with differential privacy. The library comes with
-tutorials and analysis tools for computing the privacy guarantees provided.
+This repository is forked from TensorFlow Privacy . Added adaptive clip and gradient compression features.
 
-The TensorFlow Privacy library is under continual development, always welcoming
-contributions. In particular, we always welcome help towards resolving the
-issues currently open.
+# Usage
 
-## Latest Updates
+The three file tutorials/adult_compress.py , tutorials/mnist_compress.py , tutorials/cifar_compresss.py ,  contains the code for gradient compression.
+To use adaptive clip method , change the default imported optimizer into the one in dp_optimizer_keras_vectorized_adaclip.
 
-2020-12-21: A new
-[vectorized version of the TF 2 optimizer](https://github.com/tensorflow/privacy/blob/master/tensorflow_privacy/privacy/optimizers/dp_optimizer_keras_vectorized.py)
-is available, which can deliver much faster performance. We recommend trying it
-first, and to fall back to using the original non-vectorized version only if
-this fails. We are thankful to the
-[authors of this paper](https://arxiv.org/abs/2010.09063) for spurring this
-change.
 
 ## Setting up TensorFlow Privacy
 
@@ -61,26 +50,6 @@ pip install -e .
 If you'd like to make contributions, we recommend first forking the repository
 and then cloning your fork rather than cloning this repository directly.
 
-## Contributing
-
-Contributions are welcomed! Bug fixes and new features can be initiated through
-GitHub pull requests. To speed the code review process, we ask that:
-
-*   When making code contributions to TensorFlow Privacy, you follow the `PEP8
-    with two spaces` coding style (the same as the one used by TensorFlow) in
-    your pull requests. In most cases this can be done by running `autopep8 -i
-    --indent-size 2 <file>` on the files you have edited.
-
-*   You should also check your code with pylint and TensorFlow's pylint
-    [configuration file](https://raw.githubusercontent.com/tensorflow/tensorflow/master/tensorflow/tools/ci_build/pylintrc)
-    by running `pylint --rcfile=/path/to/the/tf/rcfile <edited file.py>`.
-
-*   When making your first pull request, you
-    [sign the Google CLA](https://cla.developers.google.com/clas)
-
-*   We do not accept pull requests that add git submodules because of
-    [the problems that arise when maintaining git submodules](https://medium.com/@porteneuve/mastering-git-submodules-34c65e940407)
-
 ## Tutorials directory
 
 To help you get started with the functionalities provided by this library, we
@@ -121,16 +90,3 @@ you need to install TensorFlow 2.4 or later.
 
 The content of this repository supersedes the following existing folder in the
 tensorflow/models [repository](https://github.com/tensorflow/models/tree/master/research/differential_privacy)
-
-## Contacts
-
-If you have any questions that cannot be addressed by raising an issue, feel
-free to contact:
-
-* Galen Andrew (@galenmandrew)
-* Steve Chien (@schien1729)
-* Nicolas Papernot (@npapernot)
-
-## Copyright
-
-Copyright 2019 - Google LLC
